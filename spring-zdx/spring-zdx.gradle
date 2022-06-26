@@ -1,0 +1,14 @@
+description = "Spring Transaction"
+
+
+dependencies {
+	api(project(":spring-context"))
+	api(project(":spring-jdbc"))
+	api(project(":spring-aop"))
+	implementation("com.h2database:h2:2.1.212")
+
+	optional("org.aspectj:aspectjweaver")
+
+	optional("junit:junit")
+	optional("org.junit.jupiter:junit-jupiter-api")
+}

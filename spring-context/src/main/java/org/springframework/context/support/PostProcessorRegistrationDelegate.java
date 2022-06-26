@@ -74,7 +74,6 @@ final class PostProcessorRegistrationDelegate {
 
 		// Invoke BeanDefinitionRegistryPostProcessors first, if any.
 		Set<String> processedBeans = new HashSet<>();
-
 		if (beanFactory instanceof BeanDefinitionRegistry) {
 			BeanDefinitionRegistry registry = (BeanDefinitionRegistry) beanFactory;
 			List<BeanFactoryPostProcessor> regularPostProcessors = new ArrayList<>();
@@ -147,7 +146,6 @@ final class PostProcessorRegistrationDelegate {
 			invokeBeanFactoryPostProcessors(registryProcessors, beanFactory);
 			invokeBeanFactoryPostProcessors(regularPostProcessors, beanFactory);
 		}
-
 		else {
 			// Invoke factory processors registered with the context instance.
 			invokeBeanFactoryPostProcessors(beanFactoryPostProcessors, beanFactory);
