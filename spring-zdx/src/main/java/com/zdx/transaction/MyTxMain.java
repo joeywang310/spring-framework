@@ -1,10 +1,8 @@
 package com.zdx.transaction;
 
-import com.zdx.anno.EnableMyImport;
 import com.zdx.transaction.service.AService;
 import org.h2.Driver;
 import org.junit.jupiter.api.Test;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -26,7 +24,8 @@ public class MyTxMain {
 
 	@Test
 	public void test() throws Exception {
-		ApplicationContext context = new AnnotationConfigApplicationContext(MyTxMain.class);
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyTxMain.class);
+//		context.register(MyBDRPP.class);
 		AService aService = context.getBean(AService.class);
 		aService.query();
 	}

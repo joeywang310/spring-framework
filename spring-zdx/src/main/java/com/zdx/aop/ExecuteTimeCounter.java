@@ -3,6 +3,7 @@ package com.zdx.aop;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
@@ -28,5 +29,10 @@ public class ExecuteTimeCounter {
 		System.out.println("execute time is :" + (end-begin));
 		// stop stopwatch
 		return retVal;
+	}
+
+	@Before("myRound()")
+	public void before() {
+		System.out.println("execute aop before time is :" + System.currentTimeMillis());
 	}
 }

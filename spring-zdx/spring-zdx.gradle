@@ -6,7 +6,7 @@ dependencies {
 	api(project(":spring-jdbc"))
 	api(project(":spring-aop"))
 	implementation("com.h2database:h2:2.1.212")
-
+	implementation(project(":spring-instrument"))
 	optional("org.aspectj:aspectjweaver")
 
 	optional("junit:junit")
