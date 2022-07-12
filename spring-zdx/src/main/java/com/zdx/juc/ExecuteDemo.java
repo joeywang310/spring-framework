@@ -21,14 +21,14 @@ public class ExecuteDemo {
 				return null;
 			});
 		}
-		ExecutorService executor = new ThreadPoolExecutor(
-				1,
-				1,
-				1,
-				TimeUnit.SECONDS,
-				new ArrayBlockingQueue<>(1),
-				new ThreadPoolExecutor.DiscardPolicy()
-		);
+//		ExecutorService executor = new ThreadPoolExecutor(
+//				1,
+//				1,
+//				1,
+//				TimeUnit.SECONDS,
+//				new ArrayBlockingQueue<>(1),
+//				new ThreadPoolExecutor.DiscardPolicy()
+//		);
         ExecutorService executor = Executors.newFixedThreadPool(2);
 		Thread executorInvokerThread = new Thread(() -> {
 			try {
