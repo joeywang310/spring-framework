@@ -11,11 +11,35 @@ public class ReentrantLockTest {
 
 
 	public static void main(String[] args) {
+
 		ReentrantLock lock = new ReentrantLock();
 		lock.lock();
+		new Thread(() -> {
+			lock.lock();
+			try {
+				Thread.sleep(10000_000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			lock.unlock();
+		}).start();
+		new Thread(() -> {
+			lock.lock();
+			try {
+				Thread.sleep(10000_000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			lock.unlock();
+		}).start();
+
+
+		try {
+			Thread.sleep(4_000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		lock.unlock();
-		ReentrantLock fairLock = new ReentrantLock(true);
-		fairLock.lock();
-		fairLock.unlock();
+
 	}
 }

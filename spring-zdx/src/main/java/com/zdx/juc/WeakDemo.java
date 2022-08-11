@@ -1,7 +1,6 @@
 package com.zdx.juc;
 
 import com.zdx.domain.Student;
-import sun.misc.VM;
 
 import java.lang.ref.WeakReference;
 
